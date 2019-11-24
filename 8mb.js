@@ -1,3 +1,5 @@
+#! /usr/bin/node
+
 var ffmpeg = require("fluent-ffmpeg");
 var youtubedl = require("youtube-dl");
 var moment = require("moment");
@@ -10,7 +12,7 @@ var filenamify = require("filenamify");
 //node 8mb.js -u https://www.youtube.com/watch?v=ShtIRODxvmc -s 0:06 -e 0:19
 //node 8mb.js -u https://www.youtube.com/watch?v=mj-v6zCnEaw -s 1:33 -e 1:57
 //node 8mb.js -u https://www.youtube.com/watch?v=4K7nJpH-B_s -s 0:07 -e 0:26
-program.version("0.0.0");
+program.version("0.0.1");
 program
   .option("-s, --start-time <string>", "start time")
   .option("-e, --end-time <string>", "end time")
@@ -19,6 +21,7 @@ program
   .option("-m, --megabytes <number>", "(hopefully) max filesize in MB", 8)
   .option("-w, --max-width <number>", "width", 640)
   .option("-h, --max-height <number>", "height", 480)
+  .option("-a, --audio-only <bool>", "audio only", false);
 
 program.parse(process.argv);
 var maxSize = program.megabytes * 1024 * 1024 //8mb
@@ -30,6 +33,7 @@ var maxWidth = program.maxWidth;
 var maxHeight = program.maxHeight;
 var startTime = program.startTime;
 var endTime = program.endTime;
+var audioOnly = program.audioOnly
 
 async function main()
 {
@@ -63,7 +67,7 @@ async function main()
     })
     .on("end", () =>
     {
-      console.log("done")
+      console.log("All Done.")
     })
     .on("error", (err) =>
     {
