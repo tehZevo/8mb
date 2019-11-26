@@ -78,7 +78,7 @@ async function main()
     {
       throw err;
     });
-    
+
   if (audioOnly === true) {
     command.noVideo()
     command.save(filename)
