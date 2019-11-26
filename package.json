@@ -1,8 +1,9 @@
 {
   "name": "8mb",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "8mb.js",
+  "bin": "8mb.js",
   "dependencies": {
     "buffer-to-stream": "^1.0.0",
     "commander": "^4.0.1",
@@ -13,10 +14,24 @@
     "stream-to-array": "^2.3.0",
     "youtube-dl": "^2.1.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "eslint": "6.7.1"
   },
-  "author": "Zevo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "contributors": [
+    {
+      "name": "Zevo",
+      "url": "https://github.com/tehZevo"
+    },
+    {
+      "name": "Grey",
+      "email": "chronomly@gmail.com",
+      "url": "https://disilla.org"
+    }
+  ],
   "license": "MIT"
 }
