@@ -1,6 +1,6 @@
 #! /usr/bin/node
 
-var ffmpeg = require("fluent-ffmpeg");
+var FFmpeg = require("fluent-ffmpeg");
 var youtubedl = require("youtube-dl");
 var moment = require("moment");
 var program = require("commander");
@@ -24,6 +24,7 @@ program
   .option("-h, --max-height <number>", "height", 480)
   .option("-ao, --audio-only <boolean>", "audio only", false);
 
+//eslint-disable-next-line no-undef
 program.parse(process.argv);
 var maxSize = program.megabytes * 1024 * 1024 //8mb
 var overhead = 0.1; //10% overhead
@@ -50,15 +51,17 @@ async function main()
   //download video
   var video = youtubedl(url);
 
-  var info = await new Promise((res, rej) => video.on('info', (info) => res(info)));
+  var info = await new Promise((res) => video.on('info', (info) => res(info)));
+
+  var filename = "";
 
   if (audioOnly === false) {
-    var filename = filenamify(`${info.title}-${startTime}-${endTime}.mp4`, {replacement:"_"});
+    filename = filenamify(`${info.title}-${startTime}-${endTime}.mp4`, {replacement:"_"});
   } else if (audioOnly === true) {
-    var filename = filenamify(`${info.title}-${startTime}-${endTime}.mp3`, {replacement:"_"});
+    filename = filenamify(`${info.title}-${startTime}-${endTime}.mp3`, {replacement:"_"});
   }
 
-  var command = new ffmpeg(video)
+  var command = new FFmpeg(video)
     .setStartTime(startTime)
     .setDuration(durationHMS)
     .videoCodec("libx264")
