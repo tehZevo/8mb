@@ -1,4 +1,4 @@
-#! /usr/bin/node
+/*eslint-disable block-scoped-var */
 
 var ffmpeg = require("fluent-ffmpeg");
 var youtubedl = require("youtube-dl");
