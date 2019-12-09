@@ -14,8 +14,12 @@ Then you can just run 8mb as a normal command in your terminal
 
 ## Using NPM
 
-Eventually I'll look this up
+```
+npm -g https://github.com/tehZevo/8mb.git#master
+```
+Then just run it like a normal command in your terminal
+
 ## Usage
 ```
-# 8mb.js -u https://www.youtube.com/watch?v=oHg5SJYRHA0 -s 0:19 -e 0:36
+# 8mb -u https://www.youtube.com/watch?v=oHg5SJYRHA0 -s 0:19 -e 0:36
 ```
