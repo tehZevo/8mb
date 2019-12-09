@@ -23,3 +23,7 @@ Then just run it like a normal command in your terminal
 ```
 # 8mb -u https://www.youtube.com/watch?v=oHg5SJYRHA0 -s 0:19 -e 0:36
 ```
+
+## License
+
+8mb is licensed under the MIT License
