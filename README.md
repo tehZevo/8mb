@@ -4,20 +4,26 @@ Quickly clip YouTube videos at the specified timestamps (and transcode them to b
 
 # Installation
 
-## The Dummy Method
-* Probably requires FFmpeg to be installed
-* Probably also requires youtube-dl to be installed
-
-Then just clone and run `8mb.js`
-
 ## Using Yarn
 
 ```
 yarn global add https://github.com/tehZevo/8mb.git#master
 ```
-It just works:tm:
+
+Then you can just run 8mb as a normal command in your terminal
+
+## Using NPM
+
+```
+npm -g https://github.com/tehZevo/8mb.git#master
+```
+Then just run it like a normal command in your terminal
 
 ## Usage
 ```
-# node 8mb.js -u https://www.youtube.com/watch?v=oHg5SJYRHA0 -s 0:19 -e 0:36
+# 8mb -u https://www.youtube.com/watch?v=oHg5SJYRHA0 -s 0:19 -e 0:36
 ```
+
+## License
+
+8mb is licensed under the MIT License
