@@ -15,7 +15,7 @@ Then you can just run 8mb as a normal command in your terminal
 ## Using NPM
 
 ```
-npm -g https://github.com/tehZevo/8mb.git#master
+npm i -g https://github.com/tehZevo/8mb.git#master
 ```
 Then just run it like a normal command in your terminal
 
