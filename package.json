@@ -10,7 +10,7 @@
     "filenamify": "^4.1.0",
     "fluent-ffmpeg": "^2.1.2",
     "get-video-duration": "^1.0.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "stream-to-array": "^2.3.0",
     "youtube-dl": "^2.1.0"
   },
